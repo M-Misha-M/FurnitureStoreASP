@@ -1,0 +1,19 @@
+﻿@model FurnitureStore.Entities.Furniture
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Назва товару: @Model.Name</h2>
+
+<h3>Тип: @Model.Category.Name</h3>
+
+<p><b>Опис:</b>@Model.Description</p>
+
+<br />
+<br />
+
+<p><b>Можливо вас зацікавить</b></p>
+
+@{Html.RenderAction("Test2",  new { category = Model.Category.Name});}
+

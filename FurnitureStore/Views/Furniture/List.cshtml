@@ -1,0 +1,38 @@
+﻿@using FurnitureStore.Models
+@using FurnitureStore.HTML
+@model  ListViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+
+
+
+<div class="main container-fluid">
+
+    @foreach (var p in Model.Furnitures)
+    {
+        <div class="product">
+
+            @Html.Partial("Summary", p)
+        </div>
+
+    }
+
+
+</div>
+
+
+
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.InfoPages, x => Url.Action("List", new { page = x , category = Model.CurrentCategory }))
+</div>
+
+
+
+
+
+
+

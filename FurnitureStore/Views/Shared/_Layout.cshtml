@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/css/layout/adaptive_header.css">
+    <link rel="stylesheet" href="~/Content/css/layout/adaptive_menu.css">
+    <link rel="stylesheet" href="~/Content/css/adaptive_home.css">
+    <link rel="stylesheet" href="~/Content/css/layout/adaptive_footer.css">
+    
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+
+
+
+    
+         <script type="text/javascript">
+        $(function () {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+
+            // passes on every "a" tag
+            $(".list_menu a").each(function () {
+
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+
+                    $(this).closest("li").addClass("active");
+                }
+            });
+        });
+    </script>
+     
+
+
+</head>
+<body>
+   
+
+    <div class="container">
+        <div class="header navbar navbar-top-fixed">
+            <div class="header_first_column nav">
+                <ul class="header_about">
+                    <li>
+                        <img src="~/Content/img/img0001.png" />
+                        <span class="phone">+380 67 272 09 30</span>
+                    </li>
+
+                    <li>
+                        <img src="~/Content/img/img0002.png" />
+                        <span class="email">info@sait.ua</span>
+                    </li>
+
+                    <li>
+                        <img src="~/Content/img/img0003.png" alt="">
+                        <span class="about">Про нас - <a href="">wnm.ua</a></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="logo">
+                <a href="/Furniture/List">
+                    <img src="~/Content/img/img0004.png" alt="">
+                    </a>
+</div>
+
+            <div class="cart">
+                <img src="~/Content/img/img0005.png" alt="">
+            </div>
+
+            <div class="header_third_column">
+                <ul class="header_user ">
+
+                    <li><img class="media-object" src="~/Content/img/img0006.png" alt="..."><a href="#">Кабінет</a></li>
+
+                    <!-- <li> <img src="img/img0007.png" alt=""><a href="">Вихід</a></li>-->
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+      
+
+        
+    
+        <div class="menu">
+            <ul class="list_menu">
+                <li>
+
+                    <a href="/Furniture/List"><div class="menu_block"><img src="~/Content/img/img0008.png" alt=""><br>Всі</div></a>
+                </li>
+                @{Html.RenderAction("GenreMenu", "Navigation");}
+              
+              
+            
+
+
+               <!-- <li>
+                    <a   href="/Furniture/List?category=%D0%9A%D0%BE%D0%BC%D0%BE%D0%B4%D0%B8&amp;page=1"><div class="menu_block"><img src="~/Content/img/img0009.png" alt=""><br>Комоди</div></a>
+                </li>
+                
+                <li>
+                    <a  href="/Furniture/List?category=%D0%9A%D1%83%D1%85%D0%BD%D1%96&page=1"><div class="menu_block"><img src="~/Content/img/img0010.png" alt=""><br>Кухні</div></a>
+                </li>
+                <li>
+                    <a href="/Furniture/List?category=%D0%9B%D1%96%D0%B6%D0%BA%D0%B0&page=1"><div class="menu_block"><img src="~/Content/img/img0011.png" alt=""><br>Ліжка</div></a>
+                </li>
+                <li>
+                    <a href="/Furniture/List?category=%D0%9F%D1%80%D0%B8%D1%85%D0%BE%D0%B6%D1%96&page=1"><div class="menu_block"><img src="~/Content/img/img0012.png" alt=""><br>Прихожі</div></a>
+                </li>
+                <li>
+                    <a href="/Furniture/List?category=%D0%A2%D1%80%D1%8E%D0%BC%D0%BE&page=1"><div class="menu_block"><img src="~/Content/img/img0013.png" alt=""><br>Трюмо</div></a>
+                </li>
+                <li>
+                    <a href="/Furniture/List?category=%D0%A8%D0%B0%D1%84%D0%B8-%D0%9A%D1%83%D0%BF%D0%B5&page=1"><div class="menu_block"><img src="~/Content/img/img0014.png" alt=""><br>Шафа-Купе</div></a>
+                </li>-->
+            </ul>
+        </div>
+        <div class="hr"></div>
+
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+
+        </div>
+
+
+    <div class="footer_background">
+        <div class="footer">
+            <ul class="first_column">
+                <li><img src="~/Content/img/img0017.png" alt="" width="25px" height="25px"><a href="">Корзина</a></li>
+                <li><img src="~/Content/img/img0018.png" alt="" width="25px" height="25px"><a href="">Кабінет</a></li>
+                <li><img src="~/Content/img/img0019.png" alt="" width="25px" height="25px"><a href="">Вихід</a></li>
+            </ul>
+            <ul class="second_column">
+                <li><img src="~/Content/img/img0020.png" alt="" width="25px" height="25px"><span>+ 380 67 272 09 30</span></li>
+                <li><img src="~/Content/img/img0021.png" alt="" width="25px" height="25px"><span>info@wnm.ua</span></li>
+            </ul>
+            <ul class="third_column">
+                <li><img src="~/Content/img/img0022.png" alt="" width="25px" height="25px"><a href="">Про компанію</a></li>
+                <li><img src="~/Content/img/img0023.png" alt="" width="25px" height="25px"><span>wnm.ua</span></li>
+            </ul>
+            <ul class="fourth_column">
+                <li><img src="~/Content/img/img0024.png" alt=""></li>
+                <li><img src="~/Content/img/img0025.png" alt=""></li>
+
+                <ul class="social">
+                    <li><a href=""><img src="~/Content/img/img0026.png" alt=""></a></li>
+                    <li><a href=""><img src="~/Content/img/img0027.png" alt=""></a></li>
+                    <li><a href=""><img src="~/Content/img/img0028.png" alt=""></a></li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
+

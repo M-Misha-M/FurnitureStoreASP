@@ -1,0 +1,43 @@
+﻿@model IEnumerable<FurnitureStore.Entities.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { categoryId = item.CategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) |
+           
+
+
+            @using (Html.BeginForm("Delete", "MenuAdmin" , new { categoryId = item.CategoryId }))
+            {
+                @Html.Hidden("CategoryId)", item.CategoryId)
+                <input type="submit"
+                       class="btn btn-default btn-xs"
+                       value="Видалити" />
+            }
+        </td>
+    </tr>
+}
+
+</table>

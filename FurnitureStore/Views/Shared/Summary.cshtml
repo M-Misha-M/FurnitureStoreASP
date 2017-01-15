@@ -1,0 +1,30 @@
+﻿@model FurnitureStore.Entities.Furniture
+    
+    
+        
+                <div class="image">
+                    <img src="~/File?id=@Model.Files.First(f => f.FileType == FurnitureStore.Entities.FileType.Image).FileId" alt="avatar" />
+                </div>
+                <div class="name_product">
+
+                    @Html.ActionLink(@Model.Name, "Details", new { id = Model.FurnitureId } , new { @style = "color: #776655; text-decoration:none;" })
+                </div>
+                <div class="about">
+                    <div class="about_left_column">
+                        <div class="btn-group" role="group" aria-label="simple">
+                            <button type="button" class="btn btn-default down">-</button>
+                            <button type="button" class="btn btn-default count">2</button>
+                            <button type="button" class="btn btn-default up">+</button>
+                        </div>
+                    </div>
+
+
+                    <div class="about_right_column">
+                        <div class="price"><h4>@Model.Price.ToString("# грн")</h4></div>
+                    </div>
+                </div>
+
+                <button type="button" class="buy btn">В корзину</button>
+           
+    
+
