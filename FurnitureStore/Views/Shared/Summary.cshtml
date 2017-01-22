@@ -3,7 +3,8 @@
     
         
                 <div class="image">
-                    <img src="~/File?id=@Model.Files.First(f => f.FileType == FurnitureStore.Entities.FileType.Image).FileId" alt="avatar" />
+                    <img src="@Url.Action("GetImageFurniture", "Furnitures",
+                        new { gameId = Model.FurnitureId })" />
                 </div>
                 <div class="name_product">
 

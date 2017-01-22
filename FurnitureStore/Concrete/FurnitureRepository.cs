@@ -20,15 +20,7 @@ namespace FurnitureStore.Concrete
             }
         }
 
-        public IEnumerable<File> Files
-        {
-            get
-            {
-                return context.Files;
-            }
-
-           
-        }
+       
 
         public IEnumerable<Furniture> Furnitures
         {
@@ -37,6 +29,8 @@ namespace FurnitureStore.Concrete
                 return context.Furnitures;
             }
         }
+
+       
 
         public Category BrowseResult(string category)
         {
@@ -65,6 +59,19 @@ namespace FurnitureStore.Concrete
         }
 
 
+        public Furniture DeleteFurniture(int furnitureId)
+        {
+            Furniture dbEntry = context.Furnitures.Find(furnitureId);
+
+            if (dbEntry != null)
+            {
+                context.Furnitures.Remove(dbEntry);
+                context.SaveChanges();
+            }
+
+            return dbEntry;
+        }
+
 
         public Furniture Details(int id)
         {
@@ -80,13 +87,7 @@ namespace FurnitureStore.Concrete
             return context.Furnitures.Find(id);
         }
 
-        public Furniture IncludeFurniture(int? id)
-        {
-            Furniture furniture = context.Furnitures.Include(s => s.Files).SingleOrDefault(s => s.FurnitureId == id);
-
-
-            return furniture;
-        }
+        
 
 
 
@@ -123,10 +124,31 @@ namespace FurnitureStore.Concrete
 
         }
 
-        public void SaveFurniture(Furniture furniture)
+        public void SaveFurniture(Furniture furniture , bool updateImage = false)
         {
-            context.Furnitures.Add(furniture);
+           if(furniture.FurnitureId == 0)
+            
+                context.Furnitures.Add(furniture);
+            else
+            {
+                Furniture dbEntry = context.Furnitures.Attach(furniture);
+
+                if (dbEntry != null)
+                {
+                    var entry = context.Entry(furniture);
+                    // mark product as modified
+
+                    entry.State = EntityState.Modified;
+
+
+                    entry.Property(e => e.ImageData).IsModified = updateImage;
+                    entry.Property(e => e.ImageMimeType).IsModified = updateImage;
+
+                    context.SaveChanges();
+
+                }
+            }
             context.SaveChanges();
         }
+      }
     }
-}

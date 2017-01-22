@@ -184,15 +184,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Concrete\DataBaseEntity.cs" />
     <Compile Include="Concrete\FurnitureRepository.cs" />
-    <Compile Include="Controllers\AdminFurnitureController.cs" />
-    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\FurnitureController.cs" />
+    <Compile Include="Controllers\FurnitureManagerController.cs" />
+    <Compile Include="Controllers\FurnituresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuAdminController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Entities\Category.cs" />
-    <Compile Include="Entities\File.cs" />
-    <Compile Include="Entities\FileType.cs" />
     <Compile Include="Entities\Furniture.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +212,54 @@
     <Compile Include="Migrations\201701141229560_Files.cs" />
     <Compile Include="Migrations\201701141229560_Files.Designer.cs">
       <DependentUpon>201701141229560_Files.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701151550205_TestMigr.cs" />
+    <Compile Include="Migrations\201701151550205_TestMigr.Designer.cs">
+      <DependentUpon>201701151550205_TestMigr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701181302415_NewTable.cs" />
+    <Compile Include="Migrations\201701181302415_NewTable.Designer.cs">
+      <DependentUpon>201701181302415_NewTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701181448364_test.cs" />
+    <Compile Include="Migrations\201701181448364_test.Designer.cs">
+      <DependentUpon>201701181448364_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701181500578_AddImageTable.cs" />
+    <Compile Include="Migrations\201701181500578_AddImageTable.Designer.cs">
+      <DependentUpon>201701181500578_AddImageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701192000171_AlterTableToNonNull.cs" />
+    <Compile Include="Migrations\201701192000171_AlterTableToNonNull.Designer.cs">
+      <DependentUpon>201701192000171_AlterTableToNonNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701192027118_DropIndex.cs" />
+    <Compile Include="Migrations\201701192027118_DropIndex.Designer.cs">
+      <DependentUpon>201701192027118_DropIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701192029160_Alter.cs" />
+    <Compile Include="Migrations\201701192029160_Alter.Designer.cs">
+      <DependentUpon>201701192029160_Alter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701192031107_AddIndex.cs" />
+    <Compile Include="Migrations\201701192031107_AddIndex.Designer.cs">
+      <DependentUpon>201701192031107_AddIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201600405_keys.cs" />
+    <Compile Include="Migrations\201701201600405_keys.Designer.cs">
+      <DependentUpon>201701201600405_keys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201608005_testwhat.cs" />
+    <Compile Include="Migrations\201701201608005_testwhat.Designer.cs">
+      <DependentUpon>201701201608005_testwhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701210927418_delete.cs" />
+    <Compile Include="Migrations\201701210927418_delete.Designer.cs">
+      <DependentUpon>201701210927418_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701210935571_AddNewFields.cs" />
+    <Compile Include="Migrations\201701210935571_AddNewFields.Designer.cs">
+      <DependentUpon>201701210935571_AddNewFields.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\InfoPage.cs" />
@@ -283,11 +329,12 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\MenuAdmin\Index.cshtml" />
     <Content Include="Views\MenuAdmin\Edit.cshtml" />
-    <Content Include="Views\AdminFurniture\Create.cshtml" />
-    <Content Include="Views\AdminFurniture\Delete.cshtml" />
-    <Content Include="Views\AdminFurniture\Details.cshtml" />
-    <Content Include="Views\AdminFurniture\Edit.cshtml" />
-    <Content Include="Views\AdminFurniture\Index.cshtml" />
+    <Content Include="Views\FurnitureManager\Index.cshtml" />
+    <Content Include="Views\FurnitureManager\Edit.cshtml" />
+    <Content Include="Views\Furnitures\Create.cshtml" />
+    <Content Include="Views\Furnitures\Details.cshtml" />
+    <Content Include="Views\Furnitures\Edit.cshtml" />
+    <Content Include="Views\Furnitures\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,6 +358,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701141229560_Files.resx">
       <DependentUpon>201701141229560_Files.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701151550205_TestMigr.resx">
+      <DependentUpon>201701151550205_TestMigr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181302415_NewTable.resx">
+      <DependentUpon>201701181302415_NewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181448364_test.resx">
+      <DependentUpon>201701181448364_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181500578_AddImageTable.resx">
+      <DependentUpon>201701181500578_AddImageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701192000171_AlterTableToNonNull.resx">
+      <DependentUpon>201701192000171_AlterTableToNonNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701192027118_DropIndex.resx">
+      <DependentUpon>201701192027118_DropIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701192029160_Alter.resx">
+      <DependentUpon>201701192029160_Alter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701192031107_AddIndex.resx">
+      <DependentUpon>201701192031107_AddIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201600405_keys.resx">
+      <DependentUpon>201701201600405_keys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201608005_testwhat.resx">
+      <DependentUpon>201701201608005_testwhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701210927418_delete.resx">
+      <DependentUpon>201701210927418_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701210935571_AddNewFields.resx">
+      <DependentUpon>201701210935571_AddNewFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

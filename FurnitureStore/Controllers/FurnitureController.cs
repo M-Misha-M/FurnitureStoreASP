@@ -46,6 +46,8 @@ namespace FurnitureStore.Controllers
         }
 
 
+      
+
 
 
 
@@ -90,7 +92,23 @@ namespace FurnitureStore.Controllers
                 return null;
             }
         }
-        
+
+
+
+        public FileContentResult GetImageFurniture(int gameId)
+        {
+           Furniture game = repository.Furnitures
+                .FirstOrDefault(g => g.FurnitureId == gameId);
+
+            if (game != null)
+            {
+                return File(game.ImageData, game.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
     }
 }

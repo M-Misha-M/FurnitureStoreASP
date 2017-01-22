@@ -10,14 +10,16 @@ namespace FurnitureStore.Abstract
     public interface IFurnitureRepo
     {
         IEnumerable<Furniture> Furnitures { get; }
-        IEnumerable<Category> Categories { get; } 
-        IEnumerable<File> Files { get;}
+        IEnumerable<Category> Categories { get; }
+   
+
         Furniture Details(int id);
         Category BrowseResult(string genre);
         void SaveCategory(Category category , bool updateImage = false);
-        void SaveFurniture(Furniture furniture);
+        void SaveFurniture(Furniture furniture , bool updateImage = false);
         Category DeleteCategory(int categoryId);
-        Furniture IncludeFurniture(int? id);
+        Furniture DeleteFurniture(int furnitureId);
+
         Furniture FindById(int? id);
     }
 }

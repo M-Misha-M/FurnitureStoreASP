@@ -15,6 +15,6 @@ namespace FurnitureStore.Concrete
 
         public DbSet<Furniture> Furnitures { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<File> Files { get; set; }
+      
     }
 }

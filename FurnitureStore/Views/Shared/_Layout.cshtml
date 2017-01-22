@@ -128,6 +128,11 @@
         </div>
         <div class="hr"></div>
 
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+
         @RenderBody()
         @RenderSection("scripts", required: false)
 
@@ -154,7 +159,7 @@
                 <li><img src="~/Content/img/img0025.png" alt=""></li>
 
                 <ul class="social">
-                    <li><a href=""><img src="~/Content/img/img0026.png" alt=""></a></li>
+                    <li><a href="https://www.facebook.com/mikhail.bandura"><img src="~/Content/img/img0026.png" alt=""></a></li>
                     <li><a href=""><img src="~/Content/img/img0027.png" alt=""></a></li>
                     <li><a href=""><img src="~/Content/img/img0028.png" alt=""></a></li>
                 </ul>
