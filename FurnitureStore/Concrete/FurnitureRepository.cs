@@ -20,7 +20,15 @@ namespace FurnitureStore.Concrete
             }
         }
 
-       
+        public IEnumerable<FileDetail> FileDetails
+        {
+            get
+            {
+                return context.FileDetails;
+            }
+
+           
+        }
 
         public IEnumerable<Furniture> Furnitures
         {
@@ -124,31 +132,6 @@ namespace FurnitureStore.Concrete
 
         }
 
-        public void SaveFurniture(Furniture furniture , bool updateImage = false)
-        {
-           if(furniture.FurnitureId == 0)
-            
-                context.Furnitures.Add(furniture);
-            else
-            {
-                Furniture dbEntry = context.Furnitures.Attach(furniture);
-
-                if (dbEntry != null)
-                {
-                    var entry = context.Entry(furniture);
-                    // mark product as modified
-
-                    entry.State = EntityState.Modified;
-
-
-                    entry.Property(e => e.ImageData).IsModified = updateImage;
-                    entry.Property(e => e.ImageMimeType).IsModified = updateImage;
-
-                    context.SaveChanges();
-
-                }
-            }
-            context.SaveChanges();
-        }
+      
       }
     }

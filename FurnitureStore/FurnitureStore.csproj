@@ -84,11 +84,43 @@
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.5.29.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.5.29\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
@@ -103,6 +135,10 @@
     </Reference>
     <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.MVC3.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -182,88 +218,49 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Entities\AppDbInitializer.cs" />
+    <Compile Include="Entities\ApplicationContext.cs" />
+    <Compile Include="Entities\ApplicationRole.cs" />
+    <Compile Include="Entities\ApplicationRoleManager.cs" />
+    <Compile Include="Entities\ApplicationSignInManager.cs" />
+    <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\ApplicationUserManager.cs" />
     <Compile Include="Concrete\DataBaseEntity.cs" />
     <Compile Include="Concrete\FurnitureRepository.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FurnitureController.cs" />
-    <Compile Include="Controllers\FurnitureManagerController.cs" />
     <Compile Include="Controllers\FurnituresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuAdminController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\FileDetail.cs" />
     <Compile Include="Entities\Furniture.cs" />
+    <Compile Include="Entities\FurnitureImages.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HTML\PageHelpers.cs" />
     <Compile Include="Infastructure\NinjectDependencyResolver.cs" />
-    <Compile Include="Migrations\201701052207080_mogr1.cs" />
-    <Compile Include="Migrations\201701052207080_mogr1.Designer.cs">
-      <DependentUpon>201701052207080_mogr1.cs</DependentUpon>
+    <Compile Include="Migrations\201703130048422_whatHapened.cs" />
+    <Compile Include="Migrations\201703130048422_whatHapened.Designer.cs">
+      <DependentUpon>201703130048422_whatHapened.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701052242582_migTwo.cs" />
-    <Compile Include="Migrations\201701052242582_migTwo.Designer.cs">
-      <DependentUpon>201701052242582_migTwo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701100018253_Photo.cs" />
-    <Compile Include="Migrations\201701100018253_Photo.Designer.cs">
-      <DependentUpon>201701100018253_Photo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701141229560_Files.cs" />
-    <Compile Include="Migrations\201701141229560_Files.Designer.cs">
-      <DependentUpon>201701141229560_Files.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701151550205_TestMigr.cs" />
-    <Compile Include="Migrations\201701151550205_TestMigr.Designer.cs">
-      <DependentUpon>201701151550205_TestMigr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701181302415_NewTable.cs" />
-    <Compile Include="Migrations\201701181302415_NewTable.Designer.cs">
-      <DependentUpon>201701181302415_NewTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701181448364_test.cs" />
-    <Compile Include="Migrations\201701181448364_test.Designer.cs">
-      <DependentUpon>201701181448364_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701181500578_AddImageTable.cs" />
-    <Compile Include="Migrations\201701181500578_AddImageTable.Designer.cs">
-      <DependentUpon>201701181500578_AddImageTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701192000171_AlterTableToNonNull.cs" />
-    <Compile Include="Migrations\201701192000171_AlterTableToNonNull.Designer.cs">
-      <DependentUpon>201701192000171_AlterTableToNonNull.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701192027118_DropIndex.cs" />
-    <Compile Include="Migrations\201701192027118_DropIndex.Designer.cs">
-      <DependentUpon>201701192027118_DropIndex.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701192029160_Alter.cs" />
-    <Compile Include="Migrations\201701192029160_Alter.Designer.cs">
-      <DependentUpon>201701192029160_Alter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701192031107_AddIndex.cs" />
-    <Compile Include="Migrations\201701192031107_AddIndex.Designer.cs">
-      <DependentUpon>201701192031107_AddIndex.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701201600405_keys.cs" />
-    <Compile Include="Migrations\201701201600405_keys.Designer.cs">
-      <DependentUpon>201701201600405_keys.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701201608005_testwhat.cs" />
-    <Compile Include="Migrations\201701201608005_testwhat.Designer.cs">
-      <DependentUpon>201701201608005_testwhat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701210927418_delete.cs" />
-    <Compile Include="Migrations\201701210927418_delete.Designer.cs">
-      <DependentUpon>201701210927418_delete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701210935571_AddNewFields.cs" />
-    <Compile Include="Migrations\201701210935571_AddNewFields.Designer.cs">
-      <DependentUpon>201701210935571_AddNewFields.cs</DependentUpon>
+    <Compile Include="Migrations\201703131148489_migrationRoleManager.cs" />
+    <Compile Include="Migrations\201703131148489_migrationRoleManager.Designer.cs">
+      <DependentUpon>201703131148489_migrationRoleManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CreateRoleModel.cs" />
     <Compile Include="Models\InfoPage.cs" />
     <Compile Include="Models\ListViewModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="ModelView\CategoryVM.cs" />
+    <Compile Include="ModelView\FurnitureVM.cs" />
+    <Compile Include="ModelView\ImageVM.cs" />
+    <Compile Include="Models\RegistryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +268,93 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\adaptive_home.css" />
+    <Content Include="Content\css\adaptive_korzina.css" />
+    <Content Include="Content\css\adaptive_oplata.css" />
+    <Content Include="Content\css\adaptive_profile.css" />
+    <Content Include="Content\css\layout\adaptive_footer.css" />
+    <Content Include="Content\css\layout\adaptive_header.css" />
+    <Content Include="Content\css\layout\adaptive_menu.css" />
+    <Content Include="Content\graphics\close.png" />
+    <Content Include="Content\graphics\closeX.png" />
+    <Content Include="Content\graphics\controlbar-black-border.gif" />
+    <Content Include="Content\graphics\controlbar-text-buttons.png" />
+    <Content Include="Content\graphics\controlbar-white-small.gif" />
+    <Content Include="Content\graphics\controlbar-white.gif" />
+    <Content Include="Content\graphics\controlbar2.gif" />
+    <Content Include="Content\graphics\controlbar3.gif" />
+    <Content Include="Content\graphics\controlbar4-hover.gif" />
+    <Content Include="Content\graphics\controlbar4.gif" />
+    <Content Include="Content\graphics\fullexpand.gif" />
+    <Content Include="Content\graphics\geckodimmer.png" />
+    <Content Include="Content\graphics\icon.gif" />
+    <Content Include="Content\graphics\loader.gif" />
+    <Content Include="Content\graphics\loader.white.gif" />
+    <Content Include="Content\graphics\outlines\beveled.png" />
+    <Content Include="Content\graphics\outlines\drop-shadow.png" />
+    <Content Include="Content\graphics\outlines\glossy-dark.png" />
+    <Content Include="Content\graphics\outlines\outer-glow.png" />
+    <Content Include="Content\graphics\outlines\rounded-black.png" />
+    <Content Include="Content\graphics\outlines\rounded-white.png" />
+    <Content Include="Content\graphics\resize.gif" />
+    <Content Include="Content\graphics\scrollarrows.png" />
+    <Content Include="Content\graphics\zoomin.cur" />
+    <Content Include="Content\graphics\zoomout.cur" />
+    <Content Include="Content\highslide.css" />
+    <Content Include="Content\img\img0001.png" />
+    <Content Include="Content\img\img0002.png" />
+    <Content Include="Content\img\img0003.png" />
+    <Content Include="Content\img\img0004.png" />
+    <Content Include="Content\img\img0005.png" />
+    <Content Include="Content\img\img0006.png" />
+    <Content Include="Content\img\img0007.png" />
+    <Content Include="Content\img\img0008.png" />
+    <Content Include="Content\img\img0009.png" />
+    <Content Include="Content\img\img0010.png" />
+    <Content Include="Content\img\img0011.png" />
+    <Content Include="Content\img\img0012.png" />
+    <Content Include="Content\img\img0013.png" />
+    <Content Include="Content\img\img0014.png" />
+    <Content Include="Content\img\img0015.png" />
+    <Content Include="Content\img\img0016.png" />
+    <Content Include="Content\img\img0017.png" />
+    <Content Include="Content\img\img0018.png" />
+    <Content Include="Content\img\img0019.png" />
+    <Content Include="Content\img\img0020.png" />
+    <Content Include="Content\img\img0021.png" />
+    <Content Include="Content\img\img0022.png" />
+    <Content Include="Content\img\img0023.png" />
+    <Content Include="Content\img\img0024.png" />
+    <Content Include="Content\img\img0025.png" />
+    <Content Include="Content\img\img0026.png" />
+    <Content Include="Content\img\img0027.png" />
+    <Content Include="Content\img\img0028.png" />
+    <Content Include="Content\img\img0029.png" />
+    <Content Include="Content\img\img0030.png" />
+    <Content Include="Content\img\img0031.png" />
+    <Content Include="Content\img\img0032.png" />
+    <Content Include="Content\img\img0033.png" />
+    <Content Include="Content\img\img0034.png" />
+    <Content Include="Content\img\img0035.png" />
+    <Content Include="Content\img\img0036.png" />
+    <Content Include="Content\img\img0037.png" />
+    <Content Include="Content\img\img0038.png" />
+    <Content Include="Content\img\img0039.png" />
+    <Content Include="Content\img\img0040.png" />
+    <Content Include="Content\img\img0041.png" />
+    <Content Include="Content\img\img0042.png" />
+    <Content Include="Content\img\img0043.png" />
+    <Content Include="Content\img\img0044.png" />
+    <Content Include="Content\img\img0045.png" />
+    <Content Include="Content\img\img0046.png" />
+    <Content Include="Content\img\img0047.png" />
+    <Content Include="Content\img\img0048.png" />
+    <Content Include="Content\img\img0049.png" />
+    <Content Include="Content\img\img0050.png" />
+    <Content Include="Content\img\img0051.png" />
+    <Content Include="Content\img\img0052.png" />
+    <Content Include="Content\img\img0053.png" />
+    <Content Include="Content\img\img0066.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -288,7 +372,12 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\graphics\outlines\Outlines.psd" />
+    <Content Include="ClassDiagram1.cd" />
+    <None Include="Properties\PublishProfiles\woodshop - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\woodshop - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\highslide-with-gallery.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -300,11 +389,23 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\methods_ru.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Upload\11291625-9cdf-408c-84be-24b11c029ac8.jpg" />
+    <Content Include="Upload\32ba96b9-fe50-4b0e-9389-39f78e029864..jpg" />
+    <Content Include="Upload\4b44e4ce-59fc-4ba5-8f1d-719e1e8b1006..jpg" />
+    <Content Include="Upload\556b2666-8c5b-4c1c-bd4a-b238b60f65ec..jpg" />
+    <Content Include="Upload\c6aa69c2-a54b-4eee-aa2d-6b06e1229338.jpg" />
+    <Content Include="Upload\c6d94e96-a1da-4599-8246-fbb3e1e37894..jpg" />
+    <Content Include="Upload\c7c62ec0-aeed-4f2a-93f1-d30a2357bd9f.jpg" />
+    <Content Include="Upload\ebc10aab-dedf-4c84-8e84-0c4b9db788c4.jpg" />
+    <Content Include="Upload\f0e6c8f9-5246-4cf1-9da7-16871f25035f.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -322,24 +423,24 @@
     <Content Include="Views\Shared\Summary.cshtml" />
     <Content Include="Views\Navigation\Menu.cshtml" />
     <Content Include="Views\Furniture\Details.cshtml" />
-    <Content Include="Views\Furniture\Test.cshtml" />
     <Content Include="Views\Furniture\Test2.cshtml" />
     <Content Include="Views\Furniture\Browse.cshtml" />
     <Content Include="Views\Navigation\GenreMenu.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\MenuAdmin\Index.cshtml" />
     <Content Include="Views\MenuAdmin\Edit.cshtml" />
-    <Content Include="Views\FurnitureManager\Index.cshtml" />
-    <Content Include="Views\FurnitureManager\Edit.cshtml" />
     <Content Include="Views\Furnitures\Create.cshtml" />
     <Content Include="Views\Furnitures\Details.cshtml" />
     <Content Include="Views\Furnitures\Edit.cshtml" />
     <Content Include="Views\Furnitures\Index.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\css\" />
-    <Folder Include="Content\img\" />
     <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
@@ -347,53 +448,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701052207080_mogr1.resx">
-      <DependentUpon>201701052207080_mogr1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703130048422_whatHapened.resx">
+      <DependentUpon>201703130048422_whatHapened.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701052242582_migTwo.resx">
-      <DependentUpon>201701052242582_migTwo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701100018253_Photo.resx">
-      <DependentUpon>201701100018253_Photo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701141229560_Files.resx">
-      <DependentUpon>201701141229560_Files.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701151550205_TestMigr.resx">
-      <DependentUpon>201701151550205_TestMigr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701181302415_NewTable.resx">
-      <DependentUpon>201701181302415_NewTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701181448364_test.resx">
-      <DependentUpon>201701181448364_test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701181500578_AddImageTable.resx">
-      <DependentUpon>201701181500578_AddImageTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701192000171_AlterTableToNonNull.resx">
-      <DependentUpon>201701192000171_AlterTableToNonNull.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701192027118_DropIndex.resx">
-      <DependentUpon>201701192027118_DropIndex.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701192029160_Alter.resx">
-      <DependentUpon>201701192029160_Alter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701192031107_AddIndex.resx">
-      <DependentUpon>201701192031107_AddIndex.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201600405_keys.resx">
-      <DependentUpon>201701201600405_keys.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201608005_testwhat.resx">
-      <DependentUpon>201701201608005_testwhat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701210927418_delete.resx">
-      <DependentUpon>201701210927418_delete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701210935571_AddNewFields.resx">
-      <DependentUpon>201701210935571_AddNewFields.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703131148489_migrationRoleManager.resx">
+      <DependentUpon>201703131148489_migrationRoleManager.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

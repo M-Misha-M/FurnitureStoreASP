@@ -1,5 +1,8 @@
-﻿using System;
+﻿using FurnitureStore.Concrete;
+using FurnitureStore.Entities;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,6 +15,13 @@ namespace FurnitureStore
     {
         protected void Application_Start()
         {
+            // Database.SetInitializer(new DropCreateDatabaseAlways<AppDbInitializer>());
+            // Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationContext>());
+            //Database.SetInitializer<DataBaseEntity>(new AppDbInitializer());
+
+
+           
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

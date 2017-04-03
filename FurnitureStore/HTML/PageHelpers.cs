@@ -19,14 +19,22 @@ namespace FurnitureStore.HTML
             {
                 TagBuilder tag = new TagBuilder("a");
                 tag.MergeAttribute("href", pageUrl(i));
+                TagBuilder li = new TagBuilder("li");
+              
                 tag.InnerHtml = i.ToString();
+                li.InnerHtml = tag.ToString();
+
                 if (i == page.CurrentPage)
                 {
-                    tag.AddCssClass("selected");
-                    tag.AddCssClass("btn-primary");
+                    li.AddCssClass("active");
+                    //tag.AddCssClass("active");
+                 
+                    // tag.AddCssClass("btn-primary");
                 }
-                tag.AddCssClass("btn btn-default");
-                result.Append(tag.ToString());
+              // tag.AddCssClass("btn btn-default");
+               // result.Append(tag.ToString());
+                result.Append(li.ToString());
+            
             }
             return MvcHtmlString.Create(result.ToString());
         }
