@@ -8,10 +8,10 @@
             if (i.IsMainImage == true)
             {
 
-                <a href="Furniture/Details/@Model.FurnitureId">
-                 
-                        <img src="@Url.Content(i.Path)" alt="@i.DisplayName" width="235" height="235" />
-                    </a>
+                <a href="@Url.Action("Details" , "Furniture" , new { id = Model.FurnitureId })">
+
+                    <img src="@Url.Content(i.Path)" alt="@i.DisplayName" width="235" height="235" />
+                </a>
 
             }
         }
