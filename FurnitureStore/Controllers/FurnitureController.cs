@@ -99,7 +99,7 @@ namespace FurnitureStore.Controllers
         }
 
 
-        public PartialViewResult Test2(string category)
+        public PartialViewResult SimilarProducts(string category)
         {
          
 
@@ -108,7 +108,7 @@ namespace FurnitureStore.Controllers
             {
                 Furnitures = repository.Furnitures
                .Where(x => category == null ? true : x.Category.Name.Equals(category))
-                .OrderBy(r => Guid.NewGuid()).Take(3) , 
+                .OrderBy(r => Guid.NewGuid()).Take(4) , 
 
             
             };

@@ -1,7 +1,9 @@
 ﻿@model FurnitureStore.ModelView.FurnitureVM
 
 @{
-    ViewBag.Title = "Details";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <h2>Назва товару: @Model.Name</h2>
@@ -47,9 +49,36 @@
     <br />
     <br />
     <br />
- 
-<div>
+ <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-lg-11">
+            <div class="similiar_product">
+                <div class="name_block">Можливо вас зацікавить</div>
+                @{Html.RenderAction("SimilarProducts", new { category = Model.Category.Name });}
+            </div>
+        </div>
+    </div>
 
-    <p style="text-align:center"> <b>Можливо вас зацікавить</b></p>
-    @{Html.RenderAction("Test2", new { category = Model.Category.Name });}
+
+
+    <div class="row">
+        <div class="footer_text col-xs-12 col-sm-4 col-md-4 col-lg-11">
+                @if (User.IsInRole("admin"))
+                {
+                    @Html.ActionLink("Редагувати", "Edit", "Description", new { id = 1 }, new { @class = "btn btn-primary btn-xs" })
+                }
+
+
+                @{
+                    Html.RenderAction("Details", "Description", new { id = 1 });
+                }
+           
+        </div>
+
+    </div>
 </div>
+
+
+
+
+
