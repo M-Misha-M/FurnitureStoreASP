@@ -1,16 +1,4 @@
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\ApplicationInsights.config
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\csc.exe
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\System.Collections.Immutable.dll
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\System.Reflection.Metadata.dll
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\vbc.exe
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\VBCSCompiler.exe
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\roslyn\VBCSCompiler.exe.config
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\FurnitureStore.dll.config
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\FurnitureStore.dll
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\FurnitureStore.pdb
@@ -25,7 +13,6 @@ D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.AI.ServerTelemet
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.AI.Web.dll
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.AI.WindowsServer.dll
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.ApplicationInsights.dll
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.Web.Infrastructure.dll
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Moq.dll
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Newtonsoft.Json.dll
@@ -49,7 +36,6 @@ D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.AI.ServerTelemet
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.AI.Web.xml
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.AI.WindowsServer.xml
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.ApplicationInsights.xml
-D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Moq.xml
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Ninject.xml
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Ninject.Web.Common.xml
@@ -93,3 +79,4 @@ D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.Owin.Security.Co
 D:\visualstudio2015\FurnitureStore\FurnitureStore\bin\Microsoft.Owin.Security.OAuth.xml
 D:\visualstudio2015\FurnitureStore\FurnitureStore\obj\Release\FurnitureStore.Migrations.whatHapened.resources
 D:\visualstudio2015\FurnitureStore\FurnitureStore\obj\Release\FurnitureStore.Migrations.migrationRoleManager.resources
+D:\visualstudio2015\FurnitureStore\FurnitureStore\obj\Release\FurnitureStore.Migrations.addingNewTable.resources

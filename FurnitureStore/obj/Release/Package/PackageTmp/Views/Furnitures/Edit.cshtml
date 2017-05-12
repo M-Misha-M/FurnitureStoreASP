@@ -1,8 +1,9 @@
 ﻿@model FurnitureStore.ModelView.FurnitureVM
 
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+
 }
 
 
@@ -46,7 +47,7 @@
 </script>       
    }
     
-    <h2><b>Редагування @Model.Name</b></h2>
+    <h2 style="text-align:center"><b>Редагування @Model.Name</b></h2>
 
     @using (Html.BeginForm("Edit", "Furnitures",
         FormMethod.Post, new { enctype = "multipart/form-data"}))
@@ -56,7 +57,7 @@
 
 
 
-        <div class="container col-md-10 col-xs-10">
+        <div class="container">
             <div class="form-horizontal">
 
                 <hr />

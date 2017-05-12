@@ -1,0 +1,77 @@
+﻿
+
+.search-suggest {
+    overflow: hidden;
+    border-bottom: 1px solid #eaeaea;
+    margin-left: .5em;
+    cursor: pointer;
+    padding-top: .8em!important;
+    padding-bottom: .8em!important;
+    padding-left: .7em!important;
+    padding-right: .7em!important;
+}
+
+.search-suggest:before {
+    background-repeat: no-repeat;
+    background-position: 0 -115px;
+    width: 10px;
+    height: 14px;
+    top: 50%;
+    margin-top: -7px;
+    right: 6px
+}
+
+
+
+.search-suggest.active:before,
+.search-suggest:active:before {
+    background-repeat: no-repeat;
+    background-position: 0 -115px;
+    width: 10px;
+    height: 14px
+}
+.search-suggest.active {
+    cursor: pointer
+}
+.search-suggest-img {
+    float: left;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: middle
+}
+.search-suggest-img img {
+    max-height: 50px!important;
+    max-width: 50px!important
+}
+
+.search-suggest-detail {
+    margin-left: 4.5em;
+    margin-right: 2em
+}
+.search-suggest-title {
+    padding-bottom: .5em
+}
+
+.search-suggest-uah {
+    color: #926e49;
+    font-size: 1.07692em;
+    font-weight: 700;
+}
+
+
+.search-suggest-addprice-uah {
+    color: #fb515d;
+    font-weight: bold;
+    font-size: 1.07692em
+}
+
+
+
+
+ul.ui-autocomplete  li:hover 
+{
+    border:none;
+    background-color:#f8f0ec;
+    background-image: none;
+}

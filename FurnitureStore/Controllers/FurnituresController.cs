@@ -74,7 +74,7 @@ namespace FurnitureStore.Controllers
                 string displayName = model.MainFile.FileName;
                 string extension = Path.GetExtension(displayName);
                 string fileName = string.Format("{0}{1}", Guid.NewGuid(), extension);
-                string path = "~/Upload/" + fileName;
+                string path = "/Upload/" + fileName;
                 model.MainFile.SaveAs(Server.MapPath(path));
                 model.MainImage = new ImageVM() { Path = path, DisplayName = displayName };
             }
@@ -87,7 +87,7 @@ namespace FurnitureStore.Controllers
                     string displayName = file.FileName;
                     string extension = Path.GetExtension(displayName);
                     string fileName = string.Format("{0}{1}", Guid.NewGuid(), extension);
-                    var path = "~/Upload/" + fileName;
+                    var path = "/Upload/" + fileName;
                     file.SaveAs(Server.MapPath(path));
                     model.SecondaryImages.Add(new ImageVM { Path = path, DisplayName = displayName });
                 }
@@ -217,7 +217,7 @@ namespace FurnitureStore.Controllers
                 string displayName = model.MainFile.FileName;
                 string extension = Path.GetExtension(displayName);
                 string fileName = string.Format("{0}{1}", Guid.NewGuid(), extension);
-                string path = "~/Upload/" + fileName;
+                string path = "/Upload/" + fileName;
                 model.MainFile.SaveAs(Server.MapPath( path));
                 model.MainImage = new ImageVM() { Path = path, DisplayName = displayName };
             }
@@ -231,7 +231,7 @@ namespace FurnitureStore.Controllers
                     string displayName = file.FileName;
                     string extension = Path.GetExtension(displayName);
                     string fileName = string.Format("{0}{1}", Guid.NewGuid(), extension);
-                    var path = "~/Upload/" + fileName;
+                    var path = "/Upload/" + fileName;
                     file.SaveAs(Server.MapPath(path));
                     model.SecondaryImages.Add(new ImageVM { Path = path, DisplayName = displayName });
                 }

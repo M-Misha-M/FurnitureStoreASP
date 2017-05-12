@@ -15,7 +15,7 @@ namespace FurnitureStore.Controllers
     {
         DataBaseEntity context = new DataBaseEntity();
         private IFurnitureRepo repository;
-        public int pageSize = 8;
+        public int pageSize = 9;
 
         public FurnitureController(IFurnitureRepo repo)
         {
@@ -132,5 +132,37 @@ namespace FurnitureStore.Controllers
         }
 
 
-    }
+
+        public JsonResult Search(string term)
+        {
+           // var data = context.Furnitures.Where(p => p.Name.StartsWith(term))
+               // .Select(p => new { p.FurnitureId, p.Name }).ToList();
+
+            var test = context.FurnitureImages.Where(p => p.IsMainImage == true).
+                Join(context.Furnitures.Where(p => p.Name.Contains(term)),
+                o => o.FurnitureId, od => od.FurnitureId,
+                (o, od) => new
+                {
+                    od.FurnitureId,
+                    od.Name,
+                    od.Price,
+                    o.Path
+                }).Select(
+
+                p => new
+                {
+
+                    p.FurnitureId , 
+                    p.Price,
+                    p.Name , 
+                    p.Path,
+                    
+                })
+                .ToList();
+
+
+            return Json(test, JsonRequestBehavior.AllowGet);
+            
+        }
+     }
 }

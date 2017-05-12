@@ -1,0 +1,20 @@
+﻿@model IEnumerable<string>
+
+
+
+      
+        @foreach (var link in Model)
+        {
+            <li>
+            <a href="@(Url.RouteUrl(new
+                 {
+                     controller = "Furniture",
+                     action = "List" , 
+                     category = link
+                 } ))">
+                @Html.Raw(ViewBag.div)
+            </a>
+        </li>
+        }
+
+

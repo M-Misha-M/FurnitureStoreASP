@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="DataBaseEntity-Web.config Connection String" description="DataBaseEntity Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=tcp:nuwm.database.windows.net,1433;Initial Catalog=furniture;User Id=students@nuwm;Password=FBkiller2015; MultipleActiveResultSets=true" tags="SqlConnectionString">
+  <parameter name="DataBaseEntity-Web.config Connection String" description="DataBaseEntity Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=SQL6001.SmarterASP.NET;Initial Catalog=DB_A1FCCB_furniturestore;User Id=DB_A1FCCB_furniturestore_admin;Password=deltaforce682571;MultipleActiveResultSets=true" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="D:\\visualstudio2015\\FurnitureStore\\FurnitureStore\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataBaseEntity']/@connectionString" />
   </parameter>
 </parameters>

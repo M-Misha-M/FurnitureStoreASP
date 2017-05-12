@@ -16,7 +16,9 @@
     <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/css/layout/adaptive_header.css">
     <link href="~/Content/css/layout/adaptive_menu.css" rel="stylesheet" />
-   
+
+
+    <link href="~/Content/css/details_page.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/css/adaptive_home.css">
     <link rel="stylesheet" href="~/Content/css/layout/adaptive_footer.css">
     <link href="~/Content/highslide.css" rel="stylesheet" />
@@ -111,7 +113,7 @@ hs.addSlideshow({
 
 </head>
 <body>
-   
+
 
     <div class="container">
         <div class="header navbar navbar-top-fixed">
@@ -137,8 +139,8 @@ hs.addSlideshow({
             <div class="logo">
                 <a href="/Furniture/List">
                     <img src="~/Content/img/img0004.png" alt="">
-                    </a>
-</div>
+                </a>
+            </div>
 
             <div class="cart">
                 <img src="~/Content/img/img0005.png" alt="">
@@ -147,10 +149,10 @@ hs.addSlideshow({
             @Html.Partial("_LoginPartial")
         </div>
 
-          
 
-        
-    
+
+        @Html.Partial("_Search" , new FurnitureStore.Entities.Furniture())
+
         <div class="menu">
             <ul class="list_menu">
                 <li>
@@ -158,57 +160,62 @@ hs.addSlideshow({
                     <a href="/Furniture/List"><div class="menu_block"><img class="img-thumbnail" src="~/Content/img/img0066.png" alt=""><br>Всі</div></a>
                 </li>
                 @{Html.RenderAction("GenreMenu", "Navigation");}
-                      
 
-             
+
+
             </ul>
         </div>
         <div class="hr"></div>
-
-        @if (TempData["message"] != null)
-        {
-            <div class="alert alert-success">@TempData["message"]</div>
-        }
-
-        @RenderBody()
-
-       
-
-        @RenderSection("scripts", required: false)
-
-        </div>
-
-
-    <div class="footer_background">
-        <div class="footer">
-            <ul class="first_column">
-                <li><img src="~/Content/img/img0017.png" alt="" width="25px" height="25px"><a href="">Корзина</a></li>
-                <li><img src="~/Content/img/img0018.png" alt="" width="25px" height="25px"><a href="">Кабінет</a></li>
-                <li><img src="~/Content/img/img0019.png" alt="" width="25px" height="25px"><a href="">Вихід</a></li>
-            </ul>
-            <ul class="second_column">
-                <li><img src="~/Content/img/img0020.png" alt="" width="25px" height="25px"><span>+ 380 67 272 09 30</span></li>
-                <li><img src="~/Content/img/img0021.png" alt="" width="25px" height="25px"><span>info@wnm.ua</span></li>
-            </ul>
-            <ul class="third_column">
-                <li><img src="~/Content/img/img0022.png" alt="" width="25px" height="25px"><a href="">Про компанію</a></li>
-                <li><img src="~/Content/img/img0023.png" alt="" width="25px" height="25px"><span>wnm.ua</span></li>
-            </ul>
-            <ul class="fourth_column">
-                <li><img src="~/Content/img/img0024.png" alt=""></li>
-                <li><img src="~/Content/img/img0025.png" alt=""></li>
-
-                <ul class="social">
-                    <li><a href="https://www.facebook.com/mikhail.bandura"><img src="~/Content/img/img0026.png" alt=""></a></li>
-                    <li><a href=""><img src="~/Content/img/img0027.png" alt=""></a></li>
-                    <li><a href=""><img src="~/Content/img/img0028.png" alt=""></a></li>
-                </ul>
-            </ul>
-        </div>
     </div>
 
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success">@TempData["message"]</div>
+    }
+
+
+    @RenderBody()
+
+
    
+
+
+            @RenderSection("scripts", required: false)
+
+
+
+
+            <div class="footer_background">
+                <div class="footer">
+                    <ul class="first_column">
+                        <li><img src="~/Content/img/img0017.png" alt="" width="25px" height="25px"><a href="">Корзина</a></li>
+                        <li><img src="~/Content/img/img0018.png" alt="" width="25px" height="25px"><a href="">Кабінет</a></li>
+                        <li><img src="~/Content/img/img0019.png" alt="" width="25px" height="25px"><a href="">Вихід</a></li>
+                    </ul>
+                    <ul class="second_column">
+                        <li><img src="~/Content/img/img0020.png" alt="" width="25px" height="25px"><span>+ 380 67 272 09 30</span></li>
+                        <li><img src="~/Content/img/img0021.png" alt="" width="25px" height="25px"><span>info@wnm.ua</span></li>
+                    </ul>
+                    <ul class="third_column">
+                        <li><img src="~/Content/img/img0022.png" alt="" width="25px" height="25px"><a href="">Про компанію</a></li>
+                        <li><img src="~/Content/img/img0023.png" alt="" width="25px" height="25px"><span>wnm.ua</span></li>
+                    </ul>
+                    <ul class="fourth_column">
+                        <li><img src="~/Content/img/img0024.png" alt=""></li>
+                        <li><img src="~/Content/img/img0025.png" alt=""></li>
+
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/mikhail.bandura"><img src="~/Content/img/img0026.png" alt=""></a></li>
+                            <li><a href=""><img src="~/Content/img/img0027.png" alt=""></a></li>
+                            <li><a href=""><img src="~/Content/img/img0028.png" alt=""></a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+
+
 </body>
+
 </html>
 
 

@@ -1,0 +1,17 @@
+﻿@using FurnitureStore.Models
+@model  ListViewModel
+
+
+
+@{
+    ViewBag.Title = "Test";
+}
+
+@foreach (var p in Model.Furnitures)
+{
+    <div class="product">
+
+        @Html.Partial("Summary", p)
+    </div>
+
+}
