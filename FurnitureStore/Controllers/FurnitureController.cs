@@ -69,6 +69,7 @@ namespace FurnitureStore.Controllers
                 Description = furniture.Description , 
                 Manufacturer = furniture.Manufacturer , 
                 Price = furniture.Price , 
+                IsAvailable = furniture.IsAvailable ,
                 Size = furniture.Size , 
                 CategoryId = furniture.CategoryId ,
 
@@ -108,7 +109,7 @@ namespace FurnitureStore.Controllers
             {
                 Furnitures = repository.Furnitures
                .Where(x => category == null ? true : x.Category.Name.Equals(category))
-                .OrderBy(r => Guid.NewGuid()).Take(4) , 
+                .OrderBy(r => Guid.NewGuid()).Take(5) , 
 
             
             };

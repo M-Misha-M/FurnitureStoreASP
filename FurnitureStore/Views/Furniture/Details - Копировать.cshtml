@@ -1,0 +1,84 @@
+﻿@model FurnitureStore.ModelView.FurnitureVM
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Назва товару: @Model.Name</h2>
+<h3>Тип: @Model.Category.Name</h3>
+
+
+<p><b>Опис:</b>@Model.Description</p>
+<p><b>Виробник:</b>@Model.Manufacturer</p>
+<p><b>Розмір:</b>@Model.Size</p>
+
+<br />
+<br />
+
+      <div class="container">
+    <div class="highslide-gallery">
+        <ul class="attachment">
+            @for (int i = 0; i < Model.SecondaryImages.Count; i++)
+            {
+
+                @Html.HiddenFor(m => m.SecondaryImages[i].Id)
+                @Html.HiddenFor(m => m.SecondaryImages[i].Path)
+                @Html.HiddenFor(m => m.SecondaryImages[i].DisplayName)
+                <li>
+                    <a href="@Url.Content(Model.SecondaryImages[i].Path)" class="highslide" onclick="return hs.expand(this)">
+                        <img src="@Url.Content(Model.SecondaryImages[i].Path)" alt="@Model.MainImage.DisplayName" width="124" height="124" />
+                    </a>
+                    <div class="highslide-caption">
+                        Caption for the second image.
+                    </div>
+                </li>
+            }
+        </ul>
+
+    </div>
+          </div>
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+ <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-lg-11">
+            <div class="similiar_product">
+                <div class="name_block">Можливо вас зацікавить</div>
+                @{Html.RenderAction("SimilarProducts", new { category = Model.Category.Name });}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="footer_text col-xs-12 col-sm-4 col-md-4 col-lg-11">
+                @if (User.IsInRole("admin"))
+                {
+                    @Html.ActionLink("Редагувати", "Edit", "Description", new { id = 1 }, new { @class = "btn btn-primary btn-xs" })
+                }
+
+
+                @{
+                    Html.RenderAction("Details", "Description", new { id = 1 });
+                }
+           
+        </div>
+
+    </div>
+</div>
+
+
+
+
+

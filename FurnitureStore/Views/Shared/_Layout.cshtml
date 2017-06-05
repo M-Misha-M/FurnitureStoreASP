@@ -4,53 +4,81 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <title>@ViewBag.Title – приложение ASP.NET</title>
-    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+
+    <link href="~/Content/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/css/owl.theme.default.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+   
+    
+    @*<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.elevateZoom-3.0.8.min.js"></script>*@
+    <link href="/content/css/jquery.fancybox.css" rel="stylesheet">
+
+
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.js" type="text/javascript"></script>
+    
+    <script src="~/Scripts/jquery.fancybox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/Scripts/highslide-with-gallery.js"></script>
-
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="@Url.Content("~/Scripts/methods_ru.js")" type="text/javascript"></script>
+
+   
+    
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="~/Scripts/bootstrap.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery.fancybox.css" rel="stylesheet" />
+    <style type="text/css">
+        .fancybox-next span {
+            left: auto;
+            right: 20px;
+        }
+
+        .fancybox-prev span {
+            left: 20px;
+        }
+    </style>
+    <link href="~/Content/css/stylesheet.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/css/layout/adaptive_header.css">
     <link href="~/Content/css/layout/adaptive_menu.css" rel="stylesheet" />
-
+    
 
     <link href="~/Content/css/details_page.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/css/adaptive_home.css">
     <link rel="stylesheet" href="~/Content/css/layout/adaptive_footer.css">
-    <link href="~/Content/highslide.css" rel="stylesheet" />
+      
+    <link href="~/Content/css/material-icons.css" rel="stylesheet" />
 
-    <link href="~/Content/css/grow.css" rel="stylesheet" />
+    <link href="~/Content/css/photoswipe.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css/layout/adaptive_menu.css")
+
+  
+
 
    
-    @Styles.Render("~/Content/css/layout/adaptive_menu.css")
-    @Scripts.Render("~/bundles/jquery")
-
-
-
 
 
     
-         <script type="text/javascript">
-        $(function () {
-            // this will get the full URL at the address bar
-            var url = window.location.href;
+    <script type="text/javascript">
+  window.___gcfg = {lang: 'uk'};
 
-            // passes on every "a" tag
-            $(".list_menu a").each(function () {
-
-                // checks if its the same on the address bar
-                if (url == (this.href)) {
-
-                    $(this).closest("li").addClass("active");
-                }
-            });
-        });
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
     </script>
-
 
 
     <script type="text/javascript">
@@ -79,40 +107,21 @@
 
 
 
-   
-
-
-
-    <script type="text/javascript">
-    hs.graphicsDir = '/Content/graphics/';
-hs.align = 'center';
-hs.transitions = ['expand', 'crossfade'];
-hs.outlineType = 'rounded-white';
-hs.fadeInOut = true;
-//hs.dimmingOpacity = 0.75;
-
-// Add the controlbar
-hs.addSlideshow({
-	//slideshowGroup: 'group1',
-	interval: 5000,
-	repeat: false,
-	useControls: true,
-	fixedControls: 'fit',
-	overlayOptions: {
-		opacity: .75,
-		position: 'bottom center',
-		hideOnMouseOut: true
-	}
-});
-    </script>
-   
-
-
-     
-
-
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+ 
+
+  (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.9&appId=1721575128141991";
+      fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+    </script>
+   
 
 
     <div class="container">
@@ -150,8 +159,8 @@ hs.addSlideshow({
         </div>
 
 
-
-        @Html.Partial("_Search" , new FurnitureStore.Entities.Furniture())
+       
+        @Html.Partial("_Search", new FurnitureStore.Entities.Furniture())
 
         <div class="menu">
             <ul class="list_menu">
@@ -180,7 +189,7 @@ hs.addSlideshow({
    
 
 
-            @RenderSection("scripts", required: false)
+            
 
 
 
@@ -213,6 +222,33 @@ hs.addSlideshow({
                 </div>
             </div>
 
+
+  
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+
+            // passes on every "a" tag
+            $(".list_menu a").each(function () {
+
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+
+                    $(this).closest("li").addClass("activeMenu");
+                }
+            });
+        });
+    </script>
+
+
+
+
+    @RenderSection("scripts", required: false)
 
 </body>
 

@@ -248,9 +248,13 @@
     <Compile Include="Migrations\201703131148489_migrationRoleManager.Designer.cs">
       <DependentUpon>201703131148489_migrationRoleManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704060105051_addingNewTable.cs" />
-    <Compile Include="Migrations\201704060105051_addingNewTable.Designer.cs">
-      <DependentUpon>201704060105051_addingNewTable.cs</DependentUpon>
+    <Compile Include="Migrations\201705271028012_addNewEntity1.cs" />
+    <Compile Include="Migrations\201705271028012_addNewEntity1.Designer.cs">
+      <DependentUpon>201705271028012_addNewEntity1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705271808240_DisplayName.cs" />
+    <Compile Include="Migrations\201705271808240_DisplayName.Designer.cs">
+      <DependentUpon>201705271808240_DisplayName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CreateRoleModel.cs" />
@@ -262,6 +266,7 @@
     <Compile Include="ModelView\ImageVM.cs" />
     <Compile Include="Models\RegistryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\DecimalModelBinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -273,10 +278,18 @@
     <Content Include="Content\css\adaptive_oplata.css" />
     <Content Include="Content\css\adaptive_profile.css" />
     <Content Include="Content\css\details_page.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\jquery.bxslider.css" />
+    <Content Include="Content\css\jquery.fancybox.css" />
     <Content Include="Content\css\layout\adaptive_footer.css" />
     <Content Include="Content\css\layout\adaptive_header.css" />
     <Content Include="Content\css\layout\adaptive_menu.css" />
+    <Content Include="Content\css\material-icons.css" />
+    <Content Include="Content\css\owl.carousel.min.css" />
+    <Content Include="Content\css\owl.theme.default.min.css" />
+    <Content Include="Content\css\photoswipe.css" />
     <Content Include="Content\css\search.css" />
+    <Content Include="Content\css\stylesheet.css" />
     <Content Include="Content\graphics\close.png" />
     <Content Include="Content\graphics\closeX.png" />
     <Content Include="Content\graphics\controlbar-black-border.gif" />
@@ -387,12 +400,17 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.bxslider.min.js" />
+    <Content Include="Scripts\jquery.elevateZoom-3.0.8.min.js" />
+    <Content Include="Scripts\jquery.fancybox.js" />
+    <Content Include="Scripts\jquery.fancybox.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\methods_ru.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\tinymce\jquery.tinymce.min.js" />
@@ -610,9 +628,12 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\Shared\_Search.cshtml" />
+    <Content Include="Views\Furniture\Details - Копировать.cshtml" />
+    <Content Include="Scripts\photoswipe.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\fonts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -625,8 +646,11 @@
     <EmbeddedResource Include="Migrations\201703131148489_migrationRoleManager.resx">
       <DependentUpon>201703131148489_migrationRoleManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704060105051_addingNewTable.resx">
-      <DependentUpon>201704060105051_addingNewTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705271028012_addNewEntity1.resx">
+      <DependentUpon>201705271028012_addNewEntity1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705271808240_DisplayName.resx">
+      <DependentUpon>201705271808240_DisplayName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

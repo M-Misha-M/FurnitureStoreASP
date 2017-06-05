@@ -60,8 +60,8 @@ namespace FurnitureStore.ModelView
         public FurnitureImages furnitureImages { get; set; }
      
         public string CurrentCategory { get; set; }
-
-
+        [Display(Name = "Чи присутній товар на складі")]
+        public bool IsAvailable { get; set; }
 
     }
 }

@@ -46,6 +46,7 @@ namespace FurnitureStore.Entities
 
         public virtual ICollection<FurnitureImages> Images { get; set; }
 
-
+        [Display(Name = "Чи присутній товар на складі")]
+        public bool IsAvailable { get; set; }
     }
 }

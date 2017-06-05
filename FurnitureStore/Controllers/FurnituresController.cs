@@ -102,6 +102,7 @@ namespace FurnitureStore.Controllers
                 Description = model.Description,
                 Size = model.Size,
                 Price = model.Price,
+                IsAvailable = model.IsAvailable,
                 Manufacturer = model.Manufacturer,
                 CategoryId = model.CategoryId,                 
             };
@@ -180,6 +181,7 @@ namespace FurnitureStore.Controllers
                 Description = furniture.Description,
                 Price = furniture.Price,
                 Size = furniture.Size,
+                IsAvailable = furniture.IsAvailable,
                 CategoryId = furniture.CategoryId,
                 Manufacturer = furniture.Manufacturer,
 
@@ -249,6 +251,7 @@ namespace FurnitureStore.Controllers
             furniture.Description = model.Description;
             furniture.Manufacturer = model.Manufacturer;
             furniture.Price = model.Price;
+            furniture.IsAvailable = model.IsAvailable;
             furniture.CategoryId = model.CategoryId;
             furniture.Size = model.Size;       
               main.DisplayName = model.MainImage.DisplayName;

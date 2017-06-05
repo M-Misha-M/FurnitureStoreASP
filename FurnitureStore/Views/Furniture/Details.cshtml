@@ -6,79 +6,494 @@
 
 }
 
-<h2>Назва товару: @Model.Name</h2>
-<h3>Тип: @Model.Category.Name</h3>
 
 
-<p><b>Опис:</b>@Model.Description</p>
-<p><b>Виробник:</b>@Model.Manufacturer</p>
-<p><b>Розмір:</b>@Model.Size</p>
 
-<br />
-<br />
 
-      <div class="container">
-    <div class="highslide-gallery">
-        <ul class="attachment">
-            @for (int i = 0; i < Model.SecondaryImages.Count; i++)
-            {
+<div id="page">
+    <div class="container">
 
-                @Html.HiddenFor(m => m.SecondaryImages[i].Id)
-                @Html.HiddenFor(m => m.SecondaryImages[i].Path)
-                @Html.HiddenFor(m => m.SecondaryImages[i].DisplayName)
-                <li>
-                    <a href="@Url.Content(Model.SecondaryImages[i].Path)" class="highslide" onclick="return hs.expand(this)">
-                        <img src="@Url.Content(Model.SecondaryImages[i].Path)" alt="@Model.MainImage.DisplayName" width="124" height="124" />
-                    </a>
-                    <div class="highslide-caption">
-                        Caption for the second image.
-                    </div>
-                </li>
-            }
+        <ul class="breadcrumb">
+
+            <li>
+                <a href="#">
+
+                    <i class="fa fa-home"></i>
+
+                </a>
+            </li>
+
+            <li>
+                <span>@Model.Name</span>
+            </li>
         </ul>
+       
+        <div class="row">
 
-    </div>
-          </div>
+            <div id="content" class="col-sm-12">
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-lg-7 product_page-left">
+
+                        <div class="product-gallery">
+                            <div class="row">
+                                <div class="col-lg-9 pull-right hidden-xs hidden-sm hidden-md text-center">
+
+                                   
+                                  
+
+                                   
+                                       @if (Model.MainImage.IsMainImage == true)
+                                        {
+                                            @Html.HiddenFor(m => m.MainImage.Id)
+                                            @Html.HiddenFor(m => m.MainImage.Path)
+                                            @Html.HiddenFor(m => m.MainImage.DisplayName)
+                                            <img src="@Url.Content(Model.MainImage.Path)" alt="@Model.MainImage.DisplayName" width="800" height="800" id="productZoom" data-zoom-image="@Url.Content(Model.MainImage.Path)" />
+
+                                        }
+                                    
+
+
+                                     
+
+
+                                   <!-- <img width="800" height="800" id="productZoom" src="https://livedemo00.template-help.com/opencart_62166_v1/image/cache/catalog/products/product-1-518x518.png" data-zoom-image="https://livedemo00.template-help.com/opencart_62166_v1/image/cache/catalog/products/product-1-800x800.png">-->
+
+                                </div>
+
+                                <div class="col-lg-3 hidden-xs hidden-sm hidden-md image-thumb">
+
+                                    <div class="bx-wrapper" style="max-width: 140px; margin: 0px auto;">
+                                        <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 599px;">
+                                            <ul id="productGallery" class="image-additional" data-slide-width="140" style="width: auto; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+
+                                                @for (int i = 0; i < Model.SecondaryImages.Count; i++)
+                                                {
+
+                                                    <li style="float: none; list-style: none; position: relative; width: 140px; margin-bottom: 13px;">
+
+                                                        <a href="#" data-image="@Url.Content(Model.SecondaryImages[i].Path)" data-zoom-image="" class="zoomGalleryActive">
+                                                            <img width="140" height="140" src="@Url.Content(Model.SecondaryImages[i].Path)" alt="Array Bookcase">
+                                                        </a>
 
 
 
+                                                    </li>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
- <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-lg-11">
-            <div class="similiar_product">
-                <div class="name_block">Можливо вас зацікавить</div>
-                @{Html.RenderAction("SimilarProducts", new { category = Model.Category.Name });}
+
+
+                                                }
+                                            </ul>
+
+                                            </div>
+
+
+                                        </div>
+
+                                  </div>
+
+
+                                <div class="col-xs-12 hidden-lg image-thumb">
+
+                                    <div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;">
+                                        <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 0px;">
+                                            <ul id="productFullGallery" class="image-additional" data-slide-width="140" style="width: 715%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                                                <li style="float: left; list-style: none; position: relative; width: 100px;">
+                                                    <a href="https://livedemo00.template-help.com/opencart_62166_v1/image/cache/catalog/products/product-1-518x518.png">
+                                                        <img width="518" height="518" src="https://livedemo00.template-help.com/opencart_62166_v1/image/cache/catalog/products/product-1-518x518.png" alt="Array Bookcase">
+                                                    </a>
+                                                </li>
+
+
+                                           
+
+
+
+                                              </ul>
+                                        </div>
+
+                                        <div class="bx-controls bx-has-controls-direction">
+                                            <div class="bx-controls-direction">
+
+                                                <a class="bx-prev" href=""><i class="material-icons-expand_less"></i></a>
+                                                <a class="bx-next" href=""><i class="material-icons-expand_more"></i></a>
+
+                                            </div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-sm-6 col-lg-5 product_page-right">
+
+                        <div class="general_info product-info">
+
+                            <h2 class="product-title">@Model.Name</h2>
+
+                            <ul class="list-unstyled product-section">
+            
+                                <li>
+                                    <strong>Виробник:</strong>
+                                    @Model.Manufacturer
+                                </li>
+
+                               
+                                <li>
+                                    <strong>Наявність:</strong>
+                                   @if (Model.IsAvailable == true)
+                                   {
+                                    <span class="stock">Є в наявнсті</span>
+                                   }
+                                   else
+                                   {
+                                    <span class="stock" style="color:red">Немає в  наявності</span>
+                                   }
+
+                                </li>
+                                
+                            </ul>
+
+                            </div>
+
+                        <div id="product">
+
+                            <div class="product-options">
+                
+                                <div class="form-group option-color  required">
+
+
+                                    </div>
+
+                                </div>
+
+                            <div class="price-section">
+                                <span class="price-new">@Model.Price грн</span>
+
+
+                            </div>
+                            <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn-primary">Купити</button>
+
+
+                            <div class="product-share">
+                                <div class="fb-share-button" data-href="#" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A61741%2FFurniture%2FList&amp;src=sdkpreparse">Поделиться</a></div>
+
+                            </div>
+                        </div>
+
+                        </div>
+
+                    </div>
+
+
+                <div class="product_tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+
+                            <a href="#tab-description" data-toggle="tab">
+                                Опис
+                            </a>
+
+                        </li>
+
+
+                        <li>
+                            <a href="#tab-specification" data-toggle="tab">
+                                Характеристики
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#tab-comments" data-toggle="tab">
+                                Відгуки
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade active in" id="tab-description">
+                            <p>
+                                We’ve created the coziest online furniture store. If you are looking for a single item or are planning to furnish a several-store place, you’ll find all kinds of furniture for any taste in this online store. We have a rule of 5: it’s Great Design, Comfortable Usage, Perfect Customer Service and Best Prices.
+                            </p>
+
+                        </div>
+
+                        <div class="tab-pane product-spec product-section" id="tab-specification">
+
+                            <table class="table table-bordered">
+
+                                <thead>
+
+                                    <tr>
+                                        <th colspan="2">
+                                           <strong style="color:#000; font-weight:900"> Delivery and Returns</strong>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>
+                                            <span>Return Policy:</span>
+                                            <span>30 Days</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                                <thead>
+
+
+                                    <tr>
+                                        <th colspan="2">
+
+                                            <strong style="color:#000; font-weight:900">Product Details</strong>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <span>Size:</span>
+                                            <span>25” – 35”</span>
+
+                                        </td>
+
+                                        <td>
+                                           <span>Test</span>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> 
+
+
+                        <div class="tab-pane" id="tab-comments">
+                            Coming soon...
+                            </div>
+
+
+                        </div>
+
+                </div>
+
+
+                <div class="related-block">
+
+                    <div class="box-heading">
+
+                        <h3>Можливо вас зацікавить</h3>
+                    </div>
+
+                    <div class="box-content">
+
+                        <div class="owl-carousel owl-theme">
+                            @{Html.RenderAction("SimilarProducts", new { category = Model.Category.Name });}
+
+                        </div>
+                    </div>
+
+                </div>
+
+
             </div>
         </div>
-    </div>
-
-
-
-    <div class="row">
-        <div class="footer_text col-xs-12 col-sm-4 col-md-4 col-lg-11">
-                @if (User.IsInRole("admin"))
-                {
-                    @Html.ActionLink("Редагувати", "Edit", "Description", new { id = 1 }, new { @class = "btn btn-primary btn-xs" })
-                }
-
-
-                @{
-                    Html.RenderAction("Details", "Description", new { id = 1 });
-                }
-           
-        </div>
 
     </div>
+
 </div>
 
 
+<div class="zoomContainer" style="-webkit-transform: translateZ(0);position:absolute;left:517.46875px;top:277px;width:519px;">
+
+    <div class="zoomLens" style="background-position: 0px 0px; float: right; overflow: hidden; z-index: 999; transform: translateZ(0px); opacity: 0.4; zoom: 1; width: 259.5px; height: 259.5px; background-color: white; cursor: pointer; border: 1px solid rgb(0, 0, 0); background-repeat: no-repeat; position: absolute; left: 0px; top: 259px; display: none;">&nbsp;</div>
+    <div class="zoomWindowContainer" style="width: 400px;">
+
+        <div style="overflow: hidden; background-position: 0px -212.019px; text-align: center; background-color: rgb(255, 255, 255); width: 400px; height: 400px; float: left; background-size: 800px 800px; z-index: 100; border: 4px solid rgb(136, 136, 136); background-repeat: no-repeat; position: absolute; top: 0px; left: 519px; display: none;" class="zoomWindow">&nbsp;</div>
+
+    </div>
+
+ </div>
 
 
 
+
+
+@section scripts{
+
+
+<script src="~/Scripts/owl.carousel.min.js"></script>
+<script src="~/Scripts/jquery.bxslider.min.js"></script>
+<script src="~/Scripts/photoswipe.min.js"></script>
+
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                dots:false,
+                margin: 10,
+                navText: ['<i class = "fa fa-angle-left"></i>', '<i class = "fa fa-angle-right"></i>'],
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+            $('.owl-carousel').on('mousewheel', '.owl-stage', function (e) {
+                if (e.deltaY>0) {
+                    $('.owl-carousel').trigger('next.owl');
+                } else {
+                    $('.owl-carousel').trigger('prev.owl');
+                }
+                e.preventDefault();
+            });
+        });
+
+    </script>
+
+    <script>
+
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("href") // activated tab
+        });
+
+    </script>
+
+
+
+<script>
+    var getGalleryList = function () {
+        var self = this;
+        self.gallerylist = [];
+        if (self.options.gallery) {
+            $('#' + self.options.gallery + ' a').each(function () {
+                var img_src = '';
+                if ($(this).data("zoom-image")) {
+                    img_src = $(this).data("zoom-image");
+                } else if ($(this).data("image")) {
+                    img_src = $(this).data("image");
+                }
+                if (img_src == self.zoomImage) {
+                    self.gallerylist.unshift({
+                        href: '' + img_src + '',
+                        title: $(this).find('img').attr("title")
+                    });
+                } else {
+                    self.gallerylist.push({
+                        href: '' + img_src + '',
+                        title: $(this).find('img').attr("title")
+                    });
+                }
+            });
+        } else {
+            self.gallerylist.push({
+                href: '' + self.zoomImage + '',
+                title: $(this).find('img').attr("title")
+            });
+        }
+        return self.gallerylist;
+    };
+
+    $(document).ready(function () {
+       // var $ = jQuery.noConflict();
+        var selector = $('.quickview'),
+        selector2 = $('#productZoom');
+        if (selector.length > 0 || selector2.length > 0) {
+           // include('js/jquery.selectbox-0.2.min.js');
+            //include('~/Scripts/jquery.fancybox.js');
+        }
+
+        (function ($) {
+            var o = $('#productGallery');
+            var o1 = $('#productZoom');
+            var o2 = $('#productFullGallery');
+            if (o.length) {
+                //include('~/Scripts/jquery.bxslider.min.js');
+                $(document).ready(function () {
+                    o.bxSlider({
+                        mode: 'vertical',
+                        pager: false,
+                        controls: true,
+                        slideMargin: 13,
+                        minSlides: 4,
+                        maxSlides: 4,
+                        slideWidth: o.attr('data-slide-width') ? o.attr('data-slide-width') : undefined,
+                        nextText: '<i class="material-icons-expand_more"></i>',
+                        prevText: '<i class="material-icons-expand_less"></i>',
+                        infiniteLoop: false,
+                        adaptiveHeight: true,
+                        moveSlides: 1
+                    }).find('li:first-child > a').addClass('zoomGalleryActive');
+                });
+            }
+            if (o1.length) {
+                o1.elevateZoom({
+                    gallery: 'productGallery',
+                    responsive: true,
+                    cursor: o1.data('zoom-type') == 1 ? 'crosshair' : 'pointer',
+                    zoomType: o1.data('zoom-type') == 1 ? 'inner' : (o1.data('zoom-type') == 2 || o1.data('zoom-type') == 3) ? 'lens' : undefined,
+                    lensShape: o1.data('zoom-type') == 2 ? 'round' : undefined,
+                    constrainType: o1.data('zoom-type') == 3 ? 'height' : undefined,
+                    containLensZoom: o1.data('zoom-type') == 3 ? true : undefined
+                }).bind("click", function (e) {
+                   /* $.fancybox({
+                        href: e.target.currentSrc
+                    });
+
+                    return false;*/
+                    $.fancybox(o1.data('elevateZoom').getGalleryList());
+                    return false;
+                });
+            }
+            if (o2.length) {
+                //include('js/photo-swipe/klass.min.js');
+               // include('js/photo-swipe/code.photoswipe-3.0.5.min.js');
+                $(document).ready(function () {
+                    o2.bxSlider({
+                        pager: false,
+                        controls: true,
+                        minSlides: 1,
+                        maxSlides: 1,
+                        infiniteLoop: false,
+                        moveSlides: 1
+                    }).find('a').photoSwipe({
+                        enableMouseWheel: false,
+                        enableKeyboard: false,
+                        captionAndToolbarAutoHideDelay: 0
+                    });
+                });
+            }
+        })(jQuery);
+    });
+</script>
+
+
+}
