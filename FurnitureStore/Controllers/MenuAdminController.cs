@@ -8,6 +8,8 @@ using System.Web.Mvc;
 
 namespace FurnitureStore.Controllers
 {
+
+    [Authorize(Roles = "admin")]
     public class MenuAdminController : Controller
     {
         IFurnitureRepo repo;

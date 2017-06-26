@@ -214,6 +214,8 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\DatabaseContext.cs" />
     <Compile Include="Controllers\DescriptionController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Entities\AppDbInitializer.cs" />
@@ -230,9 +232,9 @@
     <Compile Include="Controllers\FurnituresController.cs" />
     <Compile Include="Controllers\MenuAdminController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Description.cs" />
-    <Compile Include="Entities\FileDetail.cs" />
     <Compile Include="Entities\Furniture.cs" />
     <Compile Include="Entities\FurnitureImages.cs" />
     <Compile Include="Global.asax.cs">
@@ -261,6 +263,7 @@
     <Compile Include="Models\InfoPage.cs" />
     <Compile Include="Models\ListViewModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="ModelView\CartIndexViewModel.cs" />
     <Compile Include="ModelView\CategoryVM.cs" />
     <Compile Include="ModelView\FurnitureVM.cs" />
     <Compile Include="ModelView\ImageVM.cs" />
@@ -315,7 +318,6 @@
     <Content Include="Content\graphics\scrollarrows.png" />
     <Content Include="Content\graphics\zoomin.cur" />
     <Content Include="Content\graphics\zoomout.cur" />
-    <Content Include="Content\highslide.css" />
     <Content Include="Content\img\img0001.png" />
     <Content Include="Content\img\img0002.png" />
     <Content Include="Content\img\img0003.png" />
@@ -572,15 +574,6 @@
     <Content Include="Scripts\tinymce\tinymce.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Upload\11291625-9cdf-408c-84be-24b11c029ac8.jpg" />
-    <Content Include="Upload\32ba96b9-fe50-4b0e-9389-39f78e029864..jpg" />
-    <Content Include="Upload\4b44e4ce-59fc-4ba5-8f1d-719e1e8b1006..jpg" />
-    <Content Include="Upload\556b2666-8c5b-4c1c-bd4a-b238b60f65ec..jpg" />
-    <Content Include="Upload\c6aa69c2-a54b-4eee-aa2d-6b06e1229338.jpg" />
-    <Content Include="Upload\c6d94e96-a1da-4599-8246-fbb3e1e37894..jpg" />
-    <Content Include="Upload\c7c62ec0-aeed-4f2a-93f1-d30a2357bd9f.jpg" />
-    <Content Include="Upload\ebc10aab-dedf-4c84-8e84-0c4b9db788c4.jpg" />
-    <Content Include="Upload\f0e6c8f9-5246-4cf1-9da7-16871f25035f.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -599,7 +592,6 @@
     <Content Include="Views\Navigation\Menu.cshtml" />
     <Content Include="Views\Furniture\Details.cshtml" />
     <Content Include="Views\Furniture\SimilarProducts.cshtml" />
-    <Content Include="Views\Furniture\Browse.cshtml" />
     <Content Include="Views\Navigation\GenreMenu.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\MenuAdmin\Index.cshtml" />
@@ -628,12 +620,14 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\Shared\_Search.cshtml" />
-    <Content Include="Views\Furniture\Details - Копировать.cshtml" />
     <Content Include="Scripts\photoswipe.min.js" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\CartSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\fonts\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

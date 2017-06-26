@@ -59,6 +59,11 @@
 	float:left;
 }
 
+.cart:hover {
+      opacity:0.8;
+       filter:alpha(opacity=50);
+}
+
 .count_cart{
 	font:40px Arial, sans-serif;
 	color:white;

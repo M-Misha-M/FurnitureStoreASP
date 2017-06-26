@@ -64,7 +64,73 @@
     @Styles.Render("~/Content/css/layout/adaptive_menu.css")
 
   
+    <style type="text/css">
+        .dropdown 
+{
+color: #555;
+margin: 3px -22px 0 0;
+width: 143px;
+position: relative;
+height: 17px;
+text-align:left;
+}
+.submenu
+{
+background: #fff;
+position: absolute;
+top: -12px;
+left: -20px;
+z-index: 100;
+width: 135px;
+display: none;
+margin-left: 10px;
+padding: 40px 0 5px;
+border-radius: 6px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+.dropdown li a 
+{
+color: #555555;
+display: block;
+font-family: arial;
+font-weight: bold;
+padding: 6px 15px;
+cursor: pointer;
+text-decoration:none;
+}
 
+.dropdown li a:hover
+{
+background:#155FB0;
+color: #FFFFFF;
+text-decoration: none;
+}
+a.account 
+{
+font-size: 11px;
+line-height: 16px;
+color: #555;
+position: absolute;
+z-index: 110;
+display: block;
+padding: 0px 0 0 10px;
+height: 28px;
+width: 139px;
+margin: -11px 0 0 -10px;
+text-decoration: none;
+background: url(http://demos.9lessons.info/DropMenu/icons/arrow.png) 116px 17px no-repeat;
+cursor:pointer;
+}
+.root
+{
+list-style:none;
+margin:0px;
+padding:0px;
+font-size: 11px;
+padding: 11px 0 0 0px;
+border-top:1px solid #dedede;
+}
+    </style>
 
    
 
@@ -151,9 +217,16 @@
                 </a>
             </div>
 
-            <div class="cart">
-                <img src="~/Content/img/img0005.png" alt="">
-            </div>
+           
+
+               
+            <a href="/Cart/Index" class="shopping-cart">
+                <div class="cart">
+                    <img src="~/Content/img/img0005.png" alt="">
+                    <span class="count_cart">@Html.Action("CartSummary", "Cart")</span>
+                </div>
+            </a>
+          
 
             @Html.Partial("_LoginPartial")
         </div>
@@ -225,7 +298,50 @@
 
   
 
+    <script>
 
+        $(document).ready(function()
+{
+
+$(".account").click(function()
+{
+var X=$(this).attr('id');
+if(X==1)
+{
+$(".submenu").hide();
+$(this).attr('id', '0');
+}
+else
+{
+$(".submenu").show();
+$(this).attr('id', '1');
+}
+
+});
+
+//Mouse click on sub menu
+$(".submenu").mouseup(function()
+{
+return false
+});
+
+//Mouse click on my account link
+$(".account").mouseup(function()
+{
+return false
+});
+
+
+//Document Click
+$(document).mouseup(function()
+{
+$(".submenu").hide();
+$(".account").attr('id', '');
+});
+});
+    </script>
+
+    </script>
 
 
     <script type="text/javascript">

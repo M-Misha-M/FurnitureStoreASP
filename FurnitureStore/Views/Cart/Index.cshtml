@@ -1,0 +1,114 @@
+﻿@model FurnitureStore.ModelView.CartIndexViewModel
+@using FurnitureStore.Entities
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th class="text-center">Товар</th>
+            <th class="text-center">К-сть</th>
+            <th>Назва Товару</th>
+            <th class="text-right">Ціна</th>
+            <th class="text-right">Загальна ціна</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            
+                IEnumerable<FurnitureImages> images = line.Furniture.Images;
+                FurnitureImages mainImage = images.Where(x => x.IsMainImage).FirstOrDefault();
+            
+            <tr>
+               <td class="text-center">
+                   @if (mainImage != null)
+                   {
+
+                       <img src="@Url.Content(mainImage.Path)" style="width:110px; height:70px" />
+                   }
+
+               </td>
+
+                <td class="text-center">
+                <input type="text" data-id="@line.Furniture.FurnitureId" data-price="@line.Furniture.Price" value="@line.Quantity" class="quant" />
+                </td>
+                <td class="text-left">@line.Furniture.Name</td>
+                <td class="text-right"  data-price="@line.Furniture.Price">@line.Furniture.Price</td>
+                <td class="text-right total-price">@((line.Quantity * line.Furniture.Price).ToString("#.## грн"))</td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart", new { Id = line.Furniture.FurnitureId }))
+                    {
+                        @Html.Hidden("Id", line.Furniture.FurnitureId)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-sm btn-warning" type="submit" value="Видалити з кошику" />
+                    }
+
+
+                </td>
+
+          
+            </tr>
+        }
+
+    </tbody>
+
+    <tfoot>
+
+        <tr>
+            <td colspan="4" class="text-right"><b>Всього до оплати:</b></td>
+            <td id="test" class="text-right">@Model.Cart.ComputeTotalValue().ToString("#.## грн")</td>
+        </tr>
+
+
+    </tfoot>
+
+
+
+</table>
+
+
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Продовжити покупки</a>
+</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+       
+        $(".quant").change(function (el) {
+            //console.log(el);
+            var id = $(el.target).attr('data-id');
+            var price = parseFloat($(el.target).attr('data-price').replace(',','.'));
+            var tp = $(this).parents('td').siblings('.total-price');
+           
+           
+            var quantity = parseInt($(el.target).val());
+           
+            $(tp).text((price * quantity) + ' грн');
+            var sum = 0;
+            var test = price * quantity;
+            sum += test;
+           
+            $("#test").text(sum + ' грн');
+
+            $.get(
+                '/Cart/AddTocart',
+                {
+                    id: id,
+                    returnUrl: '',
+                    quantity: quantity
+                   
+                }
+            );
+          
+
+           
+        });
+    </script>
+}

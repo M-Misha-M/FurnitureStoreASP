@@ -40,7 +40,7 @@
 
 .breadcrumb a  {
     display: inline-block;
-    color: #000;
+    color: #a8a8a8;
 }
 
 .breadcrumb a:hover {
@@ -57,15 +57,16 @@
 .breadcrumb>li>a>i,
 .breadcrumb>li>span,
 .breadcrumb>li+li:before {
-    vertical-align: middle;
+   
 }
 .breadcrumb>li+li:before {
-    content: '> ';
+    
     padding: 0;
     margin-left: 2px;
     margin-right: 2px;
     font-size: 12px;
     line-height: 14px;
+       content: ">"!important;
 }
 .breadcrumb i {
     color: #000;
@@ -73,10 +74,6 @@
     -o-transition: color 0.3s ease;
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
-}
-.breadcrumb i:before {
-    content: '\e0ba';
-    font-family: "material-design";
 }
 
 

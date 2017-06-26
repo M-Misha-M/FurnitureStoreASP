@@ -154,3 +154,12 @@ transition: 1s ease;
 
 }
 
+
+    .count_cart {
+    font: 40px Arial, sans-serif;
+    color: white;
+    position: relative;
+    left: 30px;
+    bottom: 50px;
+}
+

@@ -30,8 +30,12 @@
                         <div class="price"><h4>@Model.Price.ToString("# грн")</h4></div>
                     </div>
                 </div>
+                @using (Html.BeginForm("AddToCart", "Cart", new { Id = Model.FurnitureId }))
+                {
+                    @Html.HiddenFor(modelitem => Model.FurnitureId)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                   <input type = "submit" class="buy btn" value="В кошик" />
+               
 
-                <button type="button" class="buy btn">В корзину</button>
-           
-    
 
+                }

@@ -6,16 +6,28 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
-         <ul class="nav navbar-nav navbar-right">
-             <li><img class="media-object" src="~/Content/img/img0037.png" alt="..."></li>
-             <li>
-                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        
 
 
-             </li>
+<div class="dropdown">
+  
+        <a class="account"><img class="media-object" src="~/Content/img/img0037.png" alt="..."></a>
 
-             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-             </ul>
+      
+
+        <div class="submenu">
+            <ul class="root">
+                <li><a href="@Url.Action("Index" , "Furnitures")">Редагування товарів</a></li>
+                <li><a href="@Url.Action("Index" , "MenuAdmin")">Редагування категорій</a></li>
+                <li><a href="@Url.Action("Index" , "Role")">Редагування ролей</a></li>
+
+            </ul>
+            <ul class="root">
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Вийти</a></li>
+            </ul>
+        </div>
+</div>
+
     }
 }
 else
@@ -32,3 +44,5 @@ else
         </ul>
     </div>
 }
+
+

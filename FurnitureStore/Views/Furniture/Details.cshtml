@@ -16,11 +16,17 @@
         <ul class="breadcrumb">
 
             <li>
-                <a href="#">
+                <a href="/Furniture/List">
 
                     <i class="fa fa-home"></i>
 
                 </a>
+            </li>
+
+            <li>
+                <a href="/?category=@Model.Category.Name">@Model.Category.Name</a>
+             
+
             </li>
 
             <li>
@@ -182,12 +188,17 @@
 
 
                             </div>
-                            <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn-primary">Купити</button>
+            @using (Html.BeginForm("AddToCart", "Cart", new { Id = Model.ID }))
+            {
+                @Html.HiddenFor(modelitem => Model.ID)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                <input type="submit" class="btn btn-primary" value="В кошик" id="button-cart" />
+                           
 
-
+            }
                             <div class="product-share">
-                                <div class="fb-share-button" data-href="#" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A61741%2FFurniture%2FList&amp;src=sdkpreparse">Поделиться</a></div>
-
+                                <div class="fb-share-button" data-href="http://mmisham-001-site1.gtempurl.com/Furniture/List" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmmisham-001-site1.gtempurl.com%2FFurniture%2FList&amp;src=sdkpreparse">Поділитись</a></div>
+                                <div class="g-plus" data-action="share" data-height="24" data-href="http://mmisham-001-site1.gtempurl.com"></div>
                             </div>
                         </div>
 
@@ -226,7 +237,7 @@
 
                         <div class="tab-pane fade active in" id="tab-description">
                             <p>
-                                We’ve created the coziest online furniture store. If you are looking for a single item or are planning to furnish a several-store place, you’ll find all kinds of furniture for any taste in this online store. We have a rule of 5: it’s Great Design, Comfortable Usage, Perfect Customer Service and Best Prices.
+                                @Model.Description
                             </p>
 
                         </div>
@@ -249,8 +260,8 @@
                                     <tr>
 
                                         <td>
-                                            <span>Return Policy:</span>
-                                            <span>30 Days</span>
+                                            <span>Термін повернення:</span>
+                                            <span>30 днів</span>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -261,7 +272,7 @@
                                     <tr>
                                         <th colspan="2">
 
-                                            <strong style="color:#000; font-weight:900">Product Details</strong>
+                                            <strong style="color:#000; font-weight:900">Короткі відомості</strong>
                                         </th>
                                     </tr>
                                 </thead>
@@ -276,7 +287,7 @@
                                         </td>
 
                                         <td>
-                                           <span>Test</span>
+                                           <span>Термін доставки</span>
                                         </td>
 
                                     </tr>
@@ -286,7 +297,7 @@
 
 
                         <div class="tab-pane" id="tab-comments">
-                            Coming soon...
+                            <div id="disqus_thread"></div>
                             </div>
 
 
@@ -342,6 +353,46 @@
 <script src="~/Scripts/owl.carousel.min.js"></script>
 <script src="~/Scripts/jquery.bxslider.min.js"></script>
 <script src="~/Scripts/photoswipe.min.js"></script>
+
+
+
+
+
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://http-mmisham-001-site1-gtempurl-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+<script type="text/javascript">
+  window.___gcfg = {lang: 'uk'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+
 
 
     <script type="text/javascript">

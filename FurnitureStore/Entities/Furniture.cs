@@ -39,7 +39,7 @@ namespace FurnitureStore.Entities
         public int CategoryId { get; set; }
       
         public virtual Category Category { get; set; }
-        public virtual ICollection<FileDetail> FileDetails { get; set; }
+
 
         [NotMapped]
         public virtual FurnitureImages Image { get; set; }
