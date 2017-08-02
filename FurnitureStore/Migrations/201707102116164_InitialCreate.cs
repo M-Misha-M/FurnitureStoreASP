@@ -3,16 +3,69 @@ namespace FurnitureStore.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class whatHapened : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Categories",
+                c => new
+                    {
+                        CategoryId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        ImageData = c.Binary(),
+                        ImageMimeType = c.String(),
+                    })
+                .PrimaryKey(t => t.CategoryId);
+            
+            CreateTable(
+                "dbo.Furnitures",
+                c => new
+                    {
+                        FurnitureId = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        Description = c.String(nullable: false),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Manufacturer = c.String(nullable: false),
+                        Size = c.String(nullable: false),
+                        CategoryId = c.Int(nullable: false),
+                        IsAvailable = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.FurnitureId)
+                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
+                .Index(t => t.CategoryId);
+            
+            CreateTable(
+                "dbo.FurnitureImages",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Path = c.String(),
+                        DisplayName = c.String(),
+                        IsMainImage = c.Boolean(nullable: false),
+                        FurnitureId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Furnitures", t => t.FurnitureId, cascadeDelete: true)
+                .Index(t => t.FurnitureId);
+            
+            CreateTable(
+                "dbo.Description",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Text = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(nullable: false, maxLength: 256),
+                        Description = c.String(),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
@@ -84,17 +137,25 @@ namespace FurnitureStore.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.FurnitureImages", "FurnitureId", "dbo.Furnitures");
+            DropForeignKey("dbo.Furnitures", "CategoryId", "dbo.Categories");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.FurnitureImages", new[] { "FurnitureId" });
+            DropIndex("dbo.Furnitures", new[] { "CategoryId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Description");
+            DropTable("dbo.FurnitureImages");
+            DropTable("dbo.Furnitures");
+            DropTable("dbo.Categories");
         }
     }
 }

@@ -10,6 +10,7 @@ namespace FurnitureStore.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "FurnitureStore.Concrete.DataBaseEntity";
         }
 
         protected override void Seed(FurnitureStore.Concrete.DataBaseEntity context)

@@ -20,15 +20,7 @@ namespace FurnitureStore.Concrete
             }
         }
 
-        public IEnumerable<FileDetail> FileDetails
-        {
-            get
-            {
-                return context.FileDetails;
-            }
-
-           
-        }
+       
 
         public IEnumerable<Furniture> Furnitures
         {

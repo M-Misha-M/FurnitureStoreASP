@@ -11,7 +11,7 @@ namespace FurnitureStore.Abstract
     {
         IEnumerable<Furniture> Furnitures { get; }
         IEnumerable<Category> Categories { get; }
-        IEnumerable<FileDetail> FileDetails { get; }
+       
    
 
         Furniture Details(int id);

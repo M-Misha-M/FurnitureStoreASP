@@ -14,6 +14,7 @@ using Microsoft.Owin.Security;
 
 namespace FurnitureStore.Controllers
 {
+     [Authorize(Roles = "admin")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -51,7 +52,7 @@ namespace FurnitureStore.Controllers
         }
 
 
-        [Authorize(Roles = "admin")]
+      
         public ActionResult Register()
         {
             ViewBag.Name = new SelectList(context.Roles

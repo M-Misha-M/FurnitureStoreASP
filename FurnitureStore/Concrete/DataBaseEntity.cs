@@ -29,7 +29,6 @@ namespace FurnitureStore.Concrete
 
         public DbSet<Furniture> Furnitures { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<FileDetail> FileDetails { get; set; }
         public DbSet<FurnitureImages>FurnitureImages { get; set; }
         public DbSet<Description> Description { get; set; }
      

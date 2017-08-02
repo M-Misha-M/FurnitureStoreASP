@@ -215,11 +215,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\DatabaseContext.cs" />
     <Compile Include="Controllers\DescriptionController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Entities\AppDbInitializer.cs" />
-    <Compile Include="Entities\ApplicationContext.cs" />
     <Compile Include="Entities\ApplicationRole.cs" />
     <Compile Include="Entities\ApplicationRoleManager.cs" />
     <Compile Include="Entities\ApplicationSignInManager.cs" />
@@ -242,21 +240,13 @@
     </Compile>
     <Compile Include="HTML\PageHelpers.cs" />
     <Compile Include="Infastructure\NinjectDependencyResolver.cs" />
-    <Compile Include="Migrations\201703130048422_whatHapened.cs" />
-    <Compile Include="Migrations\201703130048422_whatHapened.Designer.cs">
-      <DependentUpon>201703130048422_whatHapened.cs</DependentUpon>
+    <Compile Include="Migrations\201707102116164_InitialCreate.cs" />
+    <Compile Include="Migrations\201707102116164_InitialCreate.Designer.cs">
+      <DependentUpon>201707102116164_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703131148489_migrationRoleManager.cs" />
-    <Compile Include="Migrations\201703131148489_migrationRoleManager.Designer.cs">
-      <DependentUpon>201703131148489_migrationRoleManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705271028012_addNewEntity1.cs" />
-    <Compile Include="Migrations\201705271028012_addNewEntity1.Designer.cs">
-      <DependentUpon>201705271028012_addNewEntity1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705271808240_DisplayName.cs" />
-    <Compile Include="Migrations\201705271808240_DisplayName.Designer.cs">
-      <DependentUpon>201705271808240_DisplayName.cs</DependentUpon>
+    <Compile Include="Migrations\201707102120511_migr.cs" />
+    <Compile Include="Migrations\201707102120511_migr.Designer.cs">
+      <DependentUpon>201707102120511_migr.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CreateRoleModel.cs" />
@@ -390,7 +380,14 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\graphics\outlines\Outlines.psd" />
+    <None Include="Properties\PublishProfiles\furnituresstore - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\furnituresstore - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\furnituresstore - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\furnituresstore - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\furnitureukraine - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\furnitureukraine - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterAsp.pubxml" />
+    <None Include="Properties\PublishProfiles\Somee.pubxml" />
     <None Include="Properties\PublishProfiles\woodshop - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\woodshop - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -634,18 +631,15 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703130048422_whatHapened.resx">
-      <DependentUpon>201703130048422_whatHapened.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707102116164_InitialCreate.resx">
+      <DependentUpon>201707102116164_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703131148489_migrationRoleManager.resx">
-      <DependentUpon>201703131148489_migrationRoleManager.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707102120511_migr.resx">
+      <DependentUpon>201707102120511_migr.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705271028012_addNewEntity1.resx">
-      <DependentUpon>201705271028012_addNewEntity1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705271808240_DisplayName.resx">
-      <DependentUpon>201705271808240_DisplayName.cs</DependentUpon>
-    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

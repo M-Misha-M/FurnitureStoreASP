@@ -93,7 +93,7 @@ namespace FurnitureStore.Controllers
                 }
             }
 
-            //   FurnitureImages main = furniture.Images.Where(x => x.IsMainImage).FirstOrDefault();
+             // FurnitureImages main = furniture.Images.Where(x => x.IsMainImage).FirstOrDefault();
 
             FurnitureImages images = new FurnitureImages();
             Furniture furniture = new Furniture

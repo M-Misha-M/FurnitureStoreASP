@@ -7,13 +7,13 @@ namespace FurnitureStore.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DisplayName : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DisplayName));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705271808240_DisplayName"; }
+            get { return "201707102116164_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source
