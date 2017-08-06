@@ -6,6 +6,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+    
+
+         @if (Model.Cart.Lines.Count() == 0)
+         {
+          <h2 style="text-align:center"><b>Кошик пустий, замовте щось</b></h2>
+         }
+         else
+         {
+
 <table id="myTable" class="table">
 
     <thead>
@@ -22,7 +31,7 @@
         @foreach (var line in Model.Cart.Lines)
         {
 
-           
+
             IEnumerable<FurnitureImages> images = line.Furniture.Images;
             FurnitureImages mainImage = images.Where(x => x.IsMainImage).FirstOrDefault();
 
@@ -40,7 +49,7 @@
                 <input type="text" data-id="@line.Furniture.FurnitureId" data-price="@line.Furniture.Price" value="@line.Quantity" class="quant" />
                 </td>
                 <td class="text-left">@line.Furniture.Name</td>
-                <td class="text-right price"  data-price="@line.Furniture.Price">@((line.Furniture.Price).ToString("#.## грн"))</td>
+                <td class="text-right productprice"  data-price="@line.Furniture.Price">@((line.Furniture.Price).ToString("#.## грн"))</td>
                 <td class="text-right amount">@((line.Quantity * line.Furniture.Price).ToString("#.## грн"))</td>
                 <td>
                     @using (Html.BeginForm("RemoveFromCart", "Cart", new { Id = line.Furniture.FurnitureId }))
@@ -72,12 +81,13 @@
 
 
 </table>
-
+  
 
 <div class="text-center">
     <a class="btn btn-primary" href="@Model.ReturnUrl">Продовжити покупки</a>
 </div>
-
+         }
+     
 
 @section scripts{
     <script type="text/javascript">
@@ -113,7 +123,7 @@
               
              
                var  quantity = $(this).find('.quant').val();
-                var price = parseFloat($(this).find('.price').attr('data-price').replace(',', '.'));
+               var price = parseFloat($(this).find('.productprice').attr('data-price').replace(',', '.'));
                 var amount = (quantity * price);
 
                 sum += amount;
